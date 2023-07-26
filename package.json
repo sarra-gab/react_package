@@ -1,7 +1,12 @@
 {
-  "name": "reactapp",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@sarra-gab/searchapp",
+  "version": "1.0.0",
+  "description": "Un package npm contenant des composants de recherche et de filtrage avancés pour React.",
+  "main": "src/index.js",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

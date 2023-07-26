@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+Titre : "react-search-filter"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description : "Un package npm personnalisé pour créer un composant de recherche avancée et de filtrage pour les applications React. Ce package offre une solution simple et configurable pour ajouter une barre de recherche et des filtres multiples à vos données, permettant aux utilisateurs de rechercher et de filtrer les informations en temps réel. Le composant de recherche prend en charge la recherche par mots-clés dans les données, tandis que les filtres multiples permettent aux utilisateurs de filtrer les données par catégorie et date. Le package est facile à utiliser et à personnaliser, avec des options pour configurer les catégories et les dates affichées dans les filtres, ainsi que la possibilité de fournir une fonction de rappel pour recevoir les données filtrées mises à jour à chaque changement de filtres. Ajoutez facilement des fonctionnalités de recherche et de filtrage puissantes à vos applications React avec le package "react-search-filter"."
 
-## Available Scripts
+Étape 1 : Installer le package
+Assurez-vous que vous avez Node.js et npm installés sur votre machine. Dans votre projet React, ouvrez une invite de commande ou un terminal, puis exécutez la commande suivante pour installer le package "react-search-filter" :
 
-In the project directory, you can run:
 
-### `npm start`
+npm install react-search-filter
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Étape 2 : Importer le composant SearchFilterComponent
+Dans le fichier où vous souhaitez utiliser le composant de recherche et de filtrage, importez le composant SearchFilterComponent de la manière suivante :
 
-### `npm test`
+jsx
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+import React from 'react';
+import SearchFilterComponent from 'react-search-filter'; 
+const App = () => {
+  // Données à afficher et filtrer
+  const data = [
+    { name: 'Article 1', category: 'Technologie', date: '2023-07-25' },
+    { name: 'Article 2', category: 'Mode', date: '2023-07-24' },
+    { name: 'Article 3', category: 'Santé', date: '2023-07-25' },
+    // Ajoutez plus de données ici si nécessaire
+  ];
 
-### `npm run build`
+  // Liste des catégories à afficher dans le filtre
+  const categories = ['Technologie', 'Mode', 'Santé'];
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  // Liste des dates à afficher dans le filtre
+  const dates = ['2023-07-25', '2023-07-24', '2023-07-23'];
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  return (
+    <div>
+      {/* Utilisez le composant SearchFilterComponent */}
+      <SearchFilterComponent data={data} categories={categories} dates={dates} />
+    </div>
+  );
+};
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export default App;
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Étape 3 : Utiliser le composant SearchFilterComponent
+Dans l'exemple ci-dessus, nous avons utilisé le composant SearchFilterComponent en lui passant les données à afficher et filtrer, ainsi que les catégories et les dates à afficher dans les filtres.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Le composant SearchFilterComponent affichera une barre de recherche où les utilisateurs peuvent saisir des mots-clés pour filtrer les données en temps réel. Il affiche également des filtres multiples pour les catégories et les dates, permettant aux utilisateurs de sélectionner des options pour filtrer les données en fonction de ces critères.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Les données filtrées seront affichées sous forme de liste juste en dessous des filtres.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Étape 4 : Configurer les options supplémentaires (facultatif)
+Le package "react-search-filter" est conçu pour être hautement configurable. Vous pouvez personnaliser les options suivantes :
 
-## Learn More
+Les catégories et les dates à afficher dans les filtres : Vous pouvez modifier les listes de catégories et de dates passées au composant SearchFilterComponent pour afficher des options personnalisées.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Fonction de rappel pour les données filtrées : Si vous souhaitez recevoir les données filtrées mises à jour à chaque changement de filtres, vous pouvez fournir une fonction de rappel (onFilteredDataChange) au composant SearchFilterComponent.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Styles CSS : Vous pouvez personnaliser les styles CSS en modifiant le fichier styles.css fourni dans le package. Vous pouvez également ajouter des classes CSS aux éléments des composants pour styliser les éléments selon vos préférences.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Avec ces étapes, vous pouvez utiliser le package "react-search-filter" pour ajouter facilement des fonctionnalités de recherche et de filtrage avancées à votre application React. N'hésitez pas à explorer les options de personnalisation pour répondre aux besoins spécifiques de votre projet.
